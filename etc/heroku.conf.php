@@ -25,3 +25,21 @@ $proxies = [$_SERVER['REMOTE_ADDR']];
 
 Request::setTrustedProxies($proxies);
 $config['proxies'] = $proxies;
+
+
+// firewall
+
+$config['firewall'] = array(
+	[	// always allow /auth - this is required
+		'path'		=> '/auth',
+		'methods'	=> 'POST',
+		'action'	=> 'allow'
+	],
+	[	// always allow GET - makes read access public
+		'methods'	=> 'GET',
+		'action'	=> 'allow'
+	],
+	[	// authorize all other requests
+		'action'	=> 'auth'
+	]
+);

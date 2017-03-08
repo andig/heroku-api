@@ -18,14 +18,18 @@ $connectionParams = [
 
 $config['db'] = $connectionParams;
 
+// NOTE to create the schema run
+// heroku run php misc/tools/doctrine orm:schema-tool:update --force
 
 // trusted proxies
 
 $proxies = [$_SERVER['REMOTE_ADDR']];
 
-Request::setTrustedProxies($proxies);
 $config['proxies'] = $proxies;
 
+// Request::setTrustedProxies($proxies);
+Request::setTrustedHeaderName(Request::HEADER_FORWARDED, null);
+Request::setTrustedHeaderName(Request::HEADER_CLIENT_HOST, null);
 
 // firewall
 

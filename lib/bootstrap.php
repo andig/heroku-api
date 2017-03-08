@@ -47,7 +47,10 @@ if (!file_exists(VZ_DIR . '/etc/volkszaehler.conf.php')) {
 require_once VZ_DIR . '/vendor/autoload.php';
 
 // load configuration
-Util\Configuration::load(VZ_DIR . '/etc/volkszaehler.conf');
+// Util\Configuration::load(VZ_DIR . '/etc/volkszaehler.conf');
+
+// additional heroku configuration
+Util\Configuration::load(VZ_DIR . '/etc/heroku.conf');
 
 // set timezone
 $tz = (Util\Configuration::read('timezone')) ? Util\Configuration::read('timezone') : @date_default_timezone_get();

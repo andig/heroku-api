@@ -23,13 +23,15 @@ $config['db'] = $connectionParams;
 
 // trusted proxies
 
-$proxies = [$_SERVER['REMOTE_ADDR']];
+if (isset($_SERVER['REMOTE_ADDR'])) {
+	$proxies = [$_SERVER['REMOTE_ADDR']];
 
-$config['proxies'] = $proxies;
+	$config['proxies'] = $proxies;
 
-// Request::setTrustedProxies($proxies);
-Request::setTrustedHeaderName(Request::HEADER_FORWARDED, null);
-Request::setTrustedHeaderName(Request::HEADER_CLIENT_HOST, null);
+	// Request::setTrustedProxies($proxies);
+	Request::setTrustedHeaderName(Request::HEADER_FORWARDED, null);
+	Request::setTrustedHeaderName(Request::HEADER_CLIENT_HOST, null);
+}
 
 // firewall
 

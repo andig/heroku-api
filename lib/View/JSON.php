@@ -330,6 +330,10 @@ class JSON extends View {
 			);
 		}
 
+		$jsonDebug['request'] = array(
+			'headers' => $this->request->headers->all()
+		);
+
 		return $jsonDebug;
 	}
 

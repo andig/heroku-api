@@ -4,16 +4,24 @@ use Symfony\Component\HttpFoundation\Request;
 
 $config = [];
 
+// database
+
 $dbopts = parse_url(getenv('DATABASE_URL'));
 
-$connectionParams = array(
+$connectionParams = [
     'dbname' => ltrim($dbopts["path"],'/'),
     'user' => $dbopts["user"],
     'password' => $dbopts["pass"],
     'host' => $dbopts["host"],
     'driver' => 'pdo_'.$dbopts['scheme'],
-);
+];
 
 $config['db'] = $connectionParams;
 
-Request::setTrustedProxies(array($_SERVER['REMOTE_ADDR']));
+
+// trusted proxies
+
+$proxies = [$_SERVER['REMOTE_ADDR']];
+
+Request::setTrustedProxies($proxies);
+$config['proxies'] = $proxies;

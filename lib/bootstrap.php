@@ -40,9 +40,9 @@ if (!file_exists(VZ_DIR . '/vendor/autoload.php')) {
 	die('Could not find autoloader. Check that dependencies have been installed via `composer install`.');
 }
 
-if (!file_exists(VZ_DIR . '/etc/volkszaehler.conf.php')) {
-	die('Could not find config file. Check that etc/volkszaehler.conf.php exists.');
-}
+// if (!file_exists(VZ_DIR . '/etc/volkszaehler.conf.php')) {
+// 	die('Could not find config file. Check that etc/volkszaehler.conf.php exists.');
+// }
 
 require_once VZ_DIR . '/vendor/autoload.php';
 

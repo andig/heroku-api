@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "7c69f8f7ed0845f67baa012f426b99aa",
+    "content-hash": "927f4fbaf8efda292cc0312258cf204f",
     "packages": [
         {
             "name": "andig/dbcopy",
@@ -96,7 +96,7 @@
             "require": {
                 "guzzle/http": "^3.6",
                 "php": ">=5.3.9",
-                "react/socket": "^0.5",
+                "react/socket": "^0.3 || ^0.4",
                 "symfony/http-foundation": "^2.2|^3.0",
                 "symfony/routing": "^2.2|^3.0"
             },
@@ -106,6 +106,7 @@
                     "Ratchet\\": "src/Ratchet"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -120,17 +121,11 @@
             "homepage": "http://socketo.me",
             "keywords": [
                 "Ratchet",
-                "Server",
-                "Sockets",
-                "WebSockets"
+                "WebSockets",
+                "server",
+                "sockets"
             ],
-            "support": {
-                "forum": "https://groups.google.com/forum/#!forum/ratchet-php",
-                "issues": "https://github.com/ratchetphp/Ratchet/issues",
-                "irc": "irc://irc.freenode.org/reactphp",
-                "source": "https://github.com/andig/Ratchet/tree/master"
-            },
-            "time": "2017-03-03 10:12:48"
+            "time": "2017-03-06T17:01:47+00:00"
         },
         {
             "name": "doctrine/annotations",
@@ -1258,20 +1253,21 @@
         },
         {
             "name": "php-pm/httpkernel-adapter",
-            "version": "dev-master",
+            "version": "dev-socket040",
             "source": {
                 "type": "git",
-                "url": "https://github.com/php-pm/php-pm-httpkernel.git",
-                "reference": "b373b0384f74e72d5cd8e8b3bef3f3ae08fd0dfa"
+                "url": "https://github.com/andig/php-pm-httpkernel.git",
+                "reference": "460b5c50d85cd8d98ce0bc1d292b4377a4faaf3f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-pm/php-pm-httpkernel/zipball/b373b0384f74e72d5cd8e8b3bef3f3ae08fd0dfa",
-                "reference": "b373b0384f74e72d5cd8e8b3bef3f3ae08fd0dfa",
+                "url": "https://api.github.com/repos/andig/php-pm-httpkernel/zipball/460b5c50d85cd8d98ce0bc1d292b4377a4faaf3f",
+                "reference": "460b5c50d85cd8d98ce0bc1d292b4377a4faaf3f",
                 "shasum": ""
             },
             "require": {
-                "php-pm/php-pm": "dev-master",
+                "php-pm/php-pm": "dev-socket040",
+                "react/http": "dev-master#cd15204bd15d106d7832c680e4fb0ca0ce2f5e30",
                 "symfony/http-foundation": "^2.6|^3.0",
                 "symfony/http-kernel": "^2.6|^3.0"
             },
@@ -1281,21 +1277,23 @@
                     "PHPPM\\": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
-            "time": "2017-02-16 21:56:13"
+            "support": {
+                "source": "https://github.com/andig/php-pm-httpkernel/tree/socket040"
+            },
+            "time": "2017-03-09 20:15:23"
         },
         {
             "name": "php-pm/php-pm",
-            "version": "dev-master",
+            "version": "dev-socket040",
             "source": {
                 "type": "git",
-                "url": "https://github.com/php-pm/php-pm.git",
-                "reference": "16b87e4241ea9ddf001e7d31aa36aa1dc8171240"
+                "url": "https://github.com/andig/php-pm.git",
+                "reference": "1a94fe8c9a37c8981f664209abacb3ef54cdb274"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-pm/php-pm/zipball/16b87e4241ea9ddf001e7d31aa36aa1dc8171240",
-                "reference": "16b87e4241ea9ddf001e7d31aa36aa1dc8171240",
+                "url": "https://api.github.com/repos/andig/php-pm/zipball/1a94fe8c9a37c8981f664209abacb3ef54cdb274",
+                "reference": "1a94fe8c9a37c8981f664209abacb3ef54cdb274",
                 "shasum": ""
             },
             "require": {
@@ -1306,7 +1304,7 @@
                 "php": ">=5.6.0",
                 "react/event-loop": "^0.4",
                 "react/http": "dev-master#cd15204bd15d106d7832c680e4fb0ca0ce2f5e30",
-                "react/socket": "^0.5.0",
+                "react/socket": "^0.4.0",
                 "react/socket-client": "^0.5.0",
                 "react/stream": "^0.4",
                 "symfony/console": "^2.6|^3.0",
@@ -1334,11 +1332,13 @@
                     "PHPPM\\": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
-            "time": "2017-03-03 15:37:24"
+            "support": {
+                "source": "https://github.com/andig/php-pm/tree/socket040"
+            },
+            "time": "2017-03-09 20:05:30"
         },
         {
             "name": "psr/http-message",
@@ -1574,28 +1574,22 @@
                 "react/socket": "^0.4",
                 "react/stream": "^0.4"
             },
-            "require-dev": {
-                "phpunit/phpunit": "^4.8.10||^5.0"
-            },
             "type": "library",
             "autoload": {
                 "psr-4": {
                     "React\\Http\\": "src"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
-            "description": "Event-driven, streaming plaintext HTTP and secure HTTPS server for ReactPHP",
+            "description": "Library for building an evented http server.",
             "keywords": [
-                "event-driven",
-                "http",
-                "https",
-                "reactphp",
-                "server",
-                "streaming"
+                "http"
             ],
+            "support": {
+                "source": "https://github.com/andig/http/tree/master"
+            },
             "time": "2016-07-06 23:51:32"
         },
         {
@@ -1693,16 +1687,16 @@
         },
         {
             "name": "react/socket",
-            "version": "v0.5.1",
+            "version": "v0.4.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/reactphp/socket.git",
-                "reference": "c0e337e375d5fb064da4ba62a91a29815e7502f8"
+                "reference": "cf074e53c974df52388ebd09710a9018894745d2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/reactphp/socket/zipball/c0e337e375d5fb064da4ba62a91a29815e7502f8",
-                "reference": "c0e337e375d5fb064da4ba62a91a29815e7502f8",
+                "url": "https://api.github.com/repos/reactphp/socket/zipball/cf074e53c974df52388ebd09710a9018894745d2",
+                "reference": "cf074e53c974df52388ebd09710a9018894745d2",
                 "shasum": ""
             },
             "require": {
@@ -1710,7 +1704,7 @@
                 "php": ">=5.3.0",
                 "react/event-loop": "0.4.*|0.3.*",
                 "react/promise": "^2.0 || ^1.1",
-                "react/stream": "^0.6 || ^0.5 || ^0.4.5"
+                "react/stream": "^0.4.5"
             },
             "require-dev": {
                 "clue/block-react": "^1.1",
@@ -1731,7 +1725,7 @@
             "keywords": [
                 "Socket"
             ],
-            "time": "2017-03-09T12:13:07+00:00"
+            "time": "2017-01-26T09:23:38+00:00"
         },
         {
             "name": "react/socket-client",
@@ -1817,64 +1811,6 @@
                 "stream"
             ],
             "time": "2017-01-25T14:44:14+00:00"
-        },
-        {
-            "name": "ringcentral/psr7",
-            "version": "1.2.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/ringcentral/psr7.git",
-                "reference": "2594fb47cdc659f3fcf0aa1559b7355460555303"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/ringcentral/psr7/zipball/2594fb47cdc659f3fcf0aa1559b7355460555303",
-                "reference": "2594fb47cdc659f3fcf0aa1559b7355460555303",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3",
-                "psr/http-message": "~1.0"
-            },
-            "provide": {
-                "psr/http-message-implementation": "1.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~4.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "RingCentral\\Psr7\\": "src/"
-                },
-                "files": [
-                    "src/functions_include.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Michael Dowling",
-                    "email": "mtdowling@gmail.com",
-                    "homepage": "https://github.com/mtdowling"
-                }
-            ],
-            "description": "PSR-7 message implementation",
-            "keywords": [
-                "http",
-                "message",
-                "stream",
-                "uri"
-            ],
-            "time": "2016-03-25T17:36:49+00:00"
         },
         {
             "name": "symfony/console",
@@ -3269,6 +3205,64 @@
                 "psr-7"
             ],
             "time": "2015-06-25T14:27:22+00:00"
+        },
+        {
+            "name": "ringcentral/psr7",
+            "version": "1.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ringcentral/psr7.git",
+                "reference": "2594fb47cdc659f3fcf0aa1559b7355460555303"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ringcentral/psr7/zipball/2594fb47cdc659f3fcf0aa1559b7355460555303",
+                "reference": "2594fb47cdc659f3fcf0aa1559b7355460555303",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3",
+                "psr/http-message": "~1.0"
+            },
+            "provide": {
+                "psr/http-message-implementation": "1.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "RingCentral\\Psr7\\": "src/"
+                },
+                "files": [
+                    "src/functions_include.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
+                }
+            ],
+            "description": "PSR-7 message implementation",
+            "keywords": [
+                "http",
+                "message",
+                "stream",
+                "uri"
+            ],
+            "time": "2016-03-25T17:36:49+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
